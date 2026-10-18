@@ -1,0 +1,113 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(255, 255, 255, .88);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--forte-border);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 1400px;
+  min-height: 74px;
+  margin: 0 auto;
+  padding: 10px 40px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 6px;
+}
+
+.brandButton {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.brandButton > div {
+  cursor: pointer !important;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.languages {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  padding: 2px;
+  border: 1px solid var(--forte-border);
+  border-radius: 8px;
+  background: var(--forte-surface-2);
+}
+
+.languages button {
+  min-height: 30px;
+  padding: 4px 8px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--forte-text-secondary);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.languages button[aria-pressed="true"] {
+  color: #245a83;
+  font-weight: 700;
+}
+
+.brandButton:focus-visible,
+.actions button:focus-visible {
+  outline: 2px solid var(--forte-brand);
+  outline-offset: 3px;
+}
+
+@media (max-width: 620px) {
+  .inner {
+    min-height: 58px;
+    gap: 12px;
+    padding: 10px 16px;
+  }
+
+  .brand img {
+    height: 30px !important;
+  }
+
+  .actions {
+    gap: 6px;
+  }
+
+  .languages button {
+    padding: 4px 6px;
+    font-size: 11px;
+  }
+}
+
+.rules { color: var(--forte-text-secondary); font-size: 12px; padding: 8px; text-decoration: none; }
+.rules:hover { color: var(--forte-brand); }
+@media (max-width: 620px) { .inner { flex-wrap: wrap; } .actions { flex-wrap: wrap; } .rules { font-size: 11px; } }
+
+.brandCaption { display: flex; flex-direction: column; gap: 3px; margin-left: 18px; padding-left: 18px; border-left: 1px solid #dfe7f0; color: #496278; font-size: 14px; letter-spacing: -.025em; text-align: left; }
+.brandCaption > span { color: #9caaba; font-size: 7px; letter-spacing: .18em; }
+.languages { padding: 3px; border-radius: 9px; border-color: #e7edf4; background: #f4f7fa; }
+.languages button { position: relative; isolation: isolate; padding: 5px 10px; }
+.languageActive { position: absolute; z-index: -1; inset: 0; background: #fff; border-radius: 6px; box-shadow: 0 1px 4px #21446215; }
+.languageText { position: relative; }
+.rules { display: inline-flex; gap: 7px; align-items: center; margin-right: 14px; font-size: 11px; }
+@media (max-width: 1000px) { .inner { padding-inline: 24px; } }
+@media (max-width: 760px) { .inner { padding-inline: 16px; } .brandCaption { margin-left: 10px; padding-left: 10px; font-size: 12px; } .brandCaption > span { font-size: 6px; } .rules { margin-right: 0; } }
+@media (max-width: 480px) { .brandCaption { display: none; } .rules { padding: 6px; } .rules svg { display: none; } .languages button { padding-inline: 6px; } .inner { gap: 6px; } }

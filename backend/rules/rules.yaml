@@ -1,0 +1,3 @@
+# Deprecated legacy catalogue. Previous entries had no verification records.
+# The application loads regulations.json. No regulations have been verified here.
+rules: []

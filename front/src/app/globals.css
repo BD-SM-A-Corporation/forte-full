@@ -1,0 +1,312 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   Forte Corporate Design System
+   Brand Palette:
+   - Primary Brand Blue: #0e85e6
+   - Brand Secondary Blue/Cyan: #3fa4c8
+   - Brand Cyan Accent: #48b8dd
+   - Pastel Muted Lime (Compliance / Success)
+   - Pastel Muted Red (Violations / Risks)
+   ========================================================================== */
+
+:root {
+  color-scheme: light;
+  --forte-brand: #0e85e6;
+  --forte-brand-hover: #0b72c4;
+  --forte-brand-secondary: #3fa4c8;
+  --forte-brand-cyan: #48b8dd;
+  --forte-brand-gradient: linear-gradient(135deg, #0e85e6 0%, #3fa4c8 50%, #48b8dd 100%);
+  --forte-brand-bg-subtle: rgba(14, 133, 230, 0.08);
+  --forte-brand-border-subtle: rgba(14, 133, 230, 0.22);
+
+  /* Legacy alias so any remaining var(--forte-magenta) cleanly resolves to #0e85e6 */
+  --forte-magenta: var(--forte-brand);
+  --forte-magenta-hover: var(--forte-brand-hover);
+
+  /* Pastel Muted Lime (Success / Clean) */
+  --pastel-lime: #729636;
+  --pastel-lime-bg: #F1F6EA;
+  --pastel-lime-border: #D1E3BE;
+  --pastel-lime-text: #45621A;
+
+  /* Pastel Muted Red (Risk / Violation) */
+  --pastel-red: #C55353;
+  --pastel-red-bg: #FDF2F2;
+  --pastel-red-border: #F3CCCC;
+  --pastel-red-text: #A13333;
+
+  /* Pastel Muted Amber (Warning) */
+  --pastel-amber: #B87B2E;
+  --pastel-amber-bg: #FEF8F0;
+  --pastel-amber-border: #F6E2C9;
+  --pastel-amber-text: #8A5310;
+
+  /* Neutrals: Light Corporate */
+  --forte-bg: #f7f9fc;
+  --forte-surface: #FFFFFF;
+  --forte-surface-2: #F1F3F7;
+  --forte-surface-subtle: #FAFAFA;
+  --forte-border: #e1e8f0;
+  --forte-border-subtle: #EBF0F5;
+  --forte-border-hover: #CBD2DE;
+  --forte-badge-bg: #EEF2F6;
+
+  /* Text hierarchy */
+  --forte-text-primary: #20354b;
+  --forte-text-secondary: #65778b;
+  --forte-text-muted: #687b90;
+  --forte-text-faint: #9CA3AF;
+
+  /* Shadows */
+  --forte-shadow-sm: 0 4px 18px rgba(25, 58, 88, .025);
+  --forte-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.06), 0 2px 4px -2px rgba(0, 0, 0, 0.04);
+  --forte-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+}
+
+@theme inline {
+  --color-background: var(--forte-bg);
+  --color-foreground: var(--forte-text-primary);
+  --font-sans: 'Open Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: ui-monospace, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--forte-bg);
+  color: var(--forte-text-primary);
+  font-family: 'Open Sans', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--forte-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--forte-border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--forte-border-hover);
+}
+
+/* Minimal Corporate Cards */
+.card-corporate {
+  background: var(--forte-surface);
+  border: 1px solid var(--forte-border);
+  border-radius: 12px;
+  box-shadow: var(--forte-shadow-sm);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.2s ease;
+}
+
+.card-corporate:hover {
+  border-color: var(--forte-border-hover);
+}
+
+.card-corporate-subtle {
+  background: var(--forte-surface-2);
+  border: 1px solid var(--forte-border);
+  border-radius: 10px;
+}
+
+/* Badges - Pastel Muted */
+.badge-lime {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 9px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  background-color: var(--pastel-lime-bg);
+  border: 1px solid var(--pastel-lime-border);
+  color: var(--pastel-lime-text);
+}
+
+.badge-red {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 9px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  background-color: var(--pastel-red-bg);
+  border: 1px solid var(--pastel-red-border);
+  color: var(--pastel-red-text);
+}
+
+.badge-amber {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 9px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  background-color: var(--pastel-amber-bg);
+  border: 1px solid var(--pastel-amber-border);
+  color: var(--pastel-amber-text);
+}
+
+.badge-neutral {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 9px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  background-color: var(--forte-badge-bg);
+  border: 1px solid var(--forte-border);
+  color: var(--forte-text-secondary);
+}
+
+/* Brand badge using brand colors #0e85e6 / #3fa4c8 */
+.badge-forte {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 9px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  background-color: var(--forte-brand-bg-subtle);
+  border: 1px solid var(--forte-brand-border-subtle);
+  color: var(--forte-brand);
+}
+
+/* Corporate Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: var(--forte-brand);
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 9px 18px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(14, 133, 230, 0.28);
+  transition: background-color 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--forte-brand-hover);
+  box-shadow: 0 2px 6px rgba(14, 133, 230, 0.38);
+}
+
+.btn-primary:active {
+  transform: scale(0.99);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: var(--forte-surface);
+  color: var(--forte-text-primary);
+  font-weight: 500;
+  font-size: 13px;
+  padding: 7px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--forte-border);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--forte-surface-2);
+  border-color: var(--forte-brand-border-subtle);
+  color: var(--forte-brand);
+}
+
+.btn-secondary:active {
+  transform: scale(0.99);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Analysis screens share the corporate palette with the upload workspace. */
+.workspace-app { min-height: 100vh; display: flex; flex-direction: column; }
+.bg-cyber-grid { background: var(--forte-bg); }
+.glass-panel, .work-panel { background: var(--forte-surface); border: 1px solid var(--forte-border); box-shadow: var(--forte-shadow-sm); }
+.work-panel { padding: 24px; border-radius: 12px; }
+.subtle-badge { display: inline-flex; gap: 6px; align-items: center; padding: 6px 9px; border-radius: 6px; background: var(--forte-surface-2); color: var(--forte-text-secondary); border: 1px solid var(--forte-border); font-size: 11px; }
+.secondary-button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 8px 12px; border-radius: 8px; border: 1px solid var(--forte-border); background: var(--forte-surface); color: var(--forte-text-primary); font-size: 12px; cursor: pointer; }
+.secondary-button:hover { color: var(--forte-brand); border-color: var(--forte-brand-border-subtle); }
+button:disabled { cursor: not-allowed; opacity: .55; }
+button:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid var(--forte-brand); outline-offset: 3px; }
+.workspace-footer { margin-top: auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding: 20px max(16px, calc((100vw - 1344px) / 2)); border-top: 1px solid var(--forte-border); color: var(--forte-text-muted); font-size: 11px; }
+.workspace-footer span { display: flex; gap: 8px; align-items: center; }
+.eyebrow { display: block; font-size: 10px; font-weight: 600; letter-spacing: .06em; color: var(--forte-text-muted); margin-bottom: 8px; }
+.result-summary { display: flex; flex-wrap: wrap; gap: 14px; padding: 20px; border: 1px solid var(--pastel-red-border); border-radius: 12px; background: var(--pastel-red-bg); }
+.result-summary.clear { background: var(--pastel-lime-bg); border-color: var(--pastel-lime-border); }
+.result-summary-icon { display: grid; place-items: center; flex: 0 0 44px; height: 44px; border-radius: 50%; color: var(--pastel-red-text); background: var(--forte-surface); }
+.clear .result-summary-icon { color: var(--pastel-lime-text); }
+.result-summary-body { flex: 1; min-width: 180px; }
+.result-summary h2 { font-size: 17px; font-weight: 700; line-height: 1.5; }
+.result-summary p { margin-top: 8px; color: var(--forte-text-secondary); font-size: 12px; line-height: 1.7; }
+.result-filename { display: block; margin-top: 10px; overflow-wrap: anywhere; color: var(--forte-text-muted); font-family: monospace; font-size: 11px; }
+.result-summary-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; width: 100%; }
+.result-new-button { display: inline-flex; align-items: center; gap: 5px; color: var(--forte-brand); font-size: 12px; cursor: pointer; }
+.event-card { background: var(--forte-surface); border: 1px solid var(--forte-border); border-left: 4px solid var(--pastel-red); border-radius: 12px; padding: 18px; box-shadow: var(--forte-shadow-sm); }
+.event-card.is-active { border-color: var(--forte-brand); box-shadow: 0 0 0 2px var(--forte-brand-bg-subtle); }
+.event-card-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.event-number { color: var(--forte-text-muted); font-size: 10px; letter-spacing: .06em; }
+.event-time { display: flex; align-items: center; gap: 6px; padding: 5px 8px; border: 1px solid var(--pastel-red-border); background: var(--pastel-red-bg); color: var(--pastel-red-text); border-radius: 6px; font: 11px monospace; cursor: pointer; }
+.event-title { display: block; text-align: left; margin-top: 14px; font-size: 14px; font-weight: 650; cursor: pointer; }
+.event-title:hover { color: var(--forte-brand); }
+.event-description { font-size: 13px; line-height: 1.7; color: var(--forte-text-secondary); margin-top: 9px; white-space: pre-wrap; overflow-wrap: anywhere; }
+.event-rule { display: flex; gap: 9px; border-top: 1px solid var(--forte-border); padding-top: 12px; margin-top: 16px; }
+.event-rule > svg { flex-shrink: 0; color: var(--forte-brand); }
+.event-rule div > span { font-size: 11px; color: var(--forte-text-muted); }
+.event-rule p { font-size: 12px; line-height: 1.6; margin-top: 4px; }
+.event-rule a { display: inline-flex; align-items: center; gap: 4px; margin-top: 8px; font-size: 12px; color: var(--forte-brand); }
+.event-rule-missing { color: var(--forte-text-muted); }
+.event-card-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-top: 16px; font-size: 11px; color: var(--forte-text-muted); }
+.event-card-bottom > span:first-child { color: var(--pastel-amber-text); }
+.player-navigation { display: flex; gap: 6px; flex-wrap: wrap; }
+.player-navigation button { padding: 5px 9px; }
+.player-seek { width: 100%; accent-color: var(--forte-brand); }
+.player-event { position: absolute; top: 12px; left: 12px; right: 12px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px; padding: 10px; border-radius: 8px; background: var(--pastel-red-bg); color: var(--pastel-red-text); font-size: 12px; pointer-events: none; }
+@media (max-width: 600px) { .result-summary { padding: 16px; } .result-summary h2 { font-size: 15px; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
+
+/* Shared surfaces and controls for the review workspace. */
+.btn-primary { border-radius: 9px; box-shadow: 0 4px 12px #0e85e622; }
+.btn-secondary { border-radius: 8px; }
+.card-corporate { border-radius: 14px; }
+.result-summary { padding: 22px; border-radius: 16px; background: linear-gradient(150deg, #fff, #fff7f5); border-color: #f0ded8; }
+.result-summary.clear { background: linear-gradient(150deg, #fff, #f3f8ee); }
+.result-summary h2 { letter-spacing: -.025em; font-weight: 650; }
+.result-summary-icon { border: 1px solid #f0e4df; border-radius: 13px; }
+.result-summary .eyebrow { font-size: 8px; line-height: 1.7; letter-spacing: .08em; }
+.event-card { border-left-width: 3px; padding: 20px; border-radius: 14px; transition: border-color .2s ease, box-shadow .2s ease; }
+.event-card:hover { border-color: #c5d8e9; }
+.event-card.is-active { border-color: var(--forte-brand); }
+.event-title { letter-spacing: -.015em; }
+.workspace-footer { padding-block: 22px; font-size: 10px; border-top-color: #e4ebf2; background: #f7f9fc; }
+@media (prefers-reduced-motion: reduce) { .event-card { transition: none; } }

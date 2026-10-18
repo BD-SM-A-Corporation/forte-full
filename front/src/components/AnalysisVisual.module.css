@@ -1,0 +1,4 @@
+.visual { width: 100%; max-width: 360px; margin-inline: auto; }
+.visual svg { display: block; width: 100%; height: auto; overflow: visible; }
+.caption { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: -8px; color: var(--forte-text-muted); font-size: 10px; }
+.caption button { display: grid; place-items: center; width: 28px; height: 28px; border: 1px solid var(--forte-border); border-radius: 50%; background: white; cursor: pointer; }
